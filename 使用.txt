@@ -1,0 +1,8 @@
+#训练
+./tools/dist_train.sh configs/textdet/dbnet/dbnet_r18_fpnc_1200e_mtwi2018.py work_dirs/dbnet 1
+
+#测试
+python demo/image_demo.py demo/mtwi_test2.jpg configs/textdet/dbnet/dbnet_r18_fpnc_1200e_mtwi2018.py work_dirs/dbnet/latest.pth demo/mtwi_test2_pred.jpg
+
+
+./tools/dist_test.sh configs/textdet/dbnet/dbnet_r18_fpnc_1200e_mtwi2018.py work_dirs/dbnet/latest.pth 1 --eval hmean-iou

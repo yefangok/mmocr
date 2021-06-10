@@ -93,6 +93,7 @@ def parse_args():
 
 
 def main():
+    mmcv.use_backend('pillow')
     args = parse_args()
 
     cfg = Config.fromfile(args.config)
